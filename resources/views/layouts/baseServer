@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+     <head>
+          <title>Ø´Ø±ÙƒØ§Øª</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+          <!-- New -->
+          <link href={{asset("fontawesome-free-5.15.3-web/css/all.css")}} rel="stylesheet">
+          <script defer src={{asset("fontawesome-free-5.15.3-web/js/all.js")}}></script>
+          <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+          <!-- delete svg circle red -->
+          <!-- for House Icon -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+          <style>
+               @font-face {font-family: cairo, Helvetica, sans-serif;
+                    /* font-family: AliFont;
+                    src: url(sansation_light.woff); */
+               }
+
+               body {
+                font-size: 15px;
+                    /*11111111111111111*/
+                    font-family: AliFont;
+                    /* font-family: "Lato", sans-serif; */
+                    scroll-behavior: smooth;
+                    /* Above tosmoothly Transition */
+               }
+               .container-fluid {
+                    padding-right: 216px;
+                    padding-left: 15px;
+                    padding-top: 63px;
+                }
+               .navbar-fixed-bottom .navbar-collapse,
+               .navbar-fixed-top .navbar-collapse {
+                    /* padding-top: 2px; */
+                    max-height: 110%;
+                    height: 110%!important;
+               }
+
+               .navbar-toggle {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+               }
+               /* ali */
+                    .navbar-inverse {
+            background-color: #c7d1da;
+               height: 49px;
+            border:0;}
+
+            .navbar-fixed-top {
+            top: 0px;
+        }
+  /* ali */
+               .sidenav {
+                    height: 100%;
+                    width: 200px;
+                    position: fixed;
+                    top: -1px;
+                    right: 0px;
+                    background-color: #c7d1da;
+               }
+               .navbar-inverse .navbar-brand {
+                color: #337ab7;
+    margin-left: 17px;
+}
+.navbar-brand::before,.navbar-brand::after{
+            content:"\f08b";
+            float: left;
+            margin-top: 1px;
+            margin-left: -22px;
+            font-family: 'FontAwesome';}
+
+
+
+               /*    ______________----______________Some media queries for responsiveness------------------------------------------------------------------------------------------ */
+ #customers {
+  margin-top: 10px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+ text-align: center;
+}
+
+#customers tr:nth-child(even),#customers tr:nth-child(odd){background-color: #f2f2f2;}
+
+/* #customers tr:hover {background-color: #fff;} */
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #8b939a;
+  color: white;
+}
+
+h1{
+    color: #337ab7;
+    text-align: right;
+    margin-top: 3px;
+    margin-bottom: 9px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+               @media (max-width: 768px) {
+                    body {
+                         padding: 40px 2px 0px 2px;
+                    }
+                    .container-fluid {
+                    padding-right: 0px;
+                    padding-left: 15px;
+                    padding-top: 63px;
+                }
+                    .sidenav {
+                         /* visibility: hidden; */
+                         display: contents;
+                         right: -200px;
+                         /*AboVe To Hide The DashBord In Small Screen */
+                         z-index: 1;
+                         position: fixed;
+                    }
+
+                    button.navbar-toggle .icon-bar {
+                         position: relative;
+                         background-color: white;
+                         animation: ali4 1s ease-in 0s infinite alternate forwards running;
+                         border: 0.5px solid #F00;
+                    }
+                    @keyframes ali4 {
+                         100% {
+                              background-color: white;
+                         }
+                    }
+               }
+
+
+
+
+  *,a:hover,a:focus{text-decoration: none;
+            list-style: none;
+        }
+
+        ul,
+        li,
+        nav,
+        a {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: helvetica;
+        }
+           .main-menu {
+            list-style: none;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+       .contain-submenu:not(.contain-submenu li.active){
+            /* box-shadow: -2px -2px -2px -2px #444, -3px -2px 0 0 #444; */
+                position: relative;
+                height: 50px;
+                border-right: 3px solid #8b939a;
+        }
+        .main-menu>li.active,.contain-submenu li.active{
+             border-right:3px solid rgb(8 54 95);
+            }
+        /* .main-menu *{ box-shadow: 0 0 0 0 rgb(216, 61, 61), -3px 0px 0 0 rgb(176, 90, 187);} */
+
+
+        .main-menu>li>a>i {
+            color: #ffffff;
+            width: 2em;
+            height: 100%;
+            line-height: 50px;
+            text-align: left;
+        }
+
+        .main-menu>li:first-child,
+        .submenu-1>li:first-child,
+        .submenu-2>li:first-child,
+        .submenu-3>li:first-child {
+            box-shadow: none;
+        }
+
+        /* .main-menu>li:first-child>a,
+        .submenu-1>li:first-child>a,
+        .submenu-2>li:first-child>a,
+        .submenu-3>li:first-child>a {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        } */
+
+        /* .main-menu>li:last-child>a,
+        .submenu-1>li:last-child>a,
+        .submenu-2>li:last-child>a,
+        .submenu-3>li:last-child>a {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        } */
+
+
+        .main-menu li a,.contain-submenu a{
+                    color: #fff;
+                    /* background: #498fcc; */
+                    background-color: #166cb6;
+                    line-height: 50px;
+                    display: block;
+                    padding: 0 2em;
+                    /* margin-top: 1px; */
+        }
+        .main-menu>li:hover>a,
+        .contain-submenu li:hover>a
+        {
+            text-decoration: none;
+    background-color: #8b939a; color: #000;
+
+        }
+
+        .submenu-1,
+        .submenu-2,
+        .submenu-3 {
+            position: absolute;
+            white-space: nowrap;
+            top: -9999px;
+        }
+ /* ali */
+ .navbar-toggle {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -60px;
+}
+ .main-menu{margin-top: -4px;}
+        .contain-submenu>a::after,.contain-submenu>a::before {
+            content:"\f060";
+            float: left;
+            margin-top: 1px;
+            margin-left: -19px;
+            font-family: 'FontAwesome';
+        }  /* ali */
+        /* revealing submenus */
+
+        .main-menu>li:hover .submenu-1,
+        .submenu-1>li:hover .submenu-2,
+        .submenu-2>li:hover .submenu-3 {
+            top: 0px;
+            right: 100%;
+            transition: right .5s cubic-bezier(0.380, 0.820, .790, .930);
+        }
+
+
+        /* Author */
+        .ancor {
+            background-color: #166cb6;
+            margin-top: 1px;
+            color: white;
+            padding: 0 2em;
+            line-height: 50px;
+            /* background-color: #615a5a; */
+            /* padding: 14px 30px 14px 0px; */
+            display: block;
+            /* color: #337ab7; */
+            direction: ltr;
+            text-align: right;
+}
+.ancor::before,.ancor::after {
+            content:"\f085";
+            float: right;
+            margin-top: 1px;
+            margin-right: -22px;
+            font-family: 'FontAwesome';
+           }
+.addBtn::after{
+            content:"\f067";
+            float: left;
+            margin-top: 1px;
+            margin-right: -22px;
+            font-family: 'FontAwesome';}
+           .user::before,.user::after {
+            content:"\f234";
+            float: right;
+            margin-top: 1px;
+            margin-right: -22px;
+            font-family: 'FontAwesome';
+           }
+.ancor:hover {
+    background-color: #8b939a; color: #000;}
+
+   label{
+      width: 100%;
+      text-align: right;
+    }
+    .form-control{
+        border: 2px solid #b6d7f3;
+        background-color: #fff;
+    }
+
+.form-control-edit {
+    display: block;
+    width: 30%;
+    height: 28px;
+    margin-bottom: -18px;
+    padding: 4px 10px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 2px solid #b6d7f3;
+    background-color: #fff;
+}
+.addBtn{
+        display: block;
+    width: 30%;
+    direction: rtl;
+    top: -70px;
+    position: relative;
+}
+.list-group {
+     margin-left: 6px;
+    margin-bottom: -2px;
+    margin-top: 4px;
+}
+.list-group-item {
+    margin-bottom: -1px;
+    padding-left: 150px;
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-left: 4px solid #4494dc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+}
+
+.first{border:0}
+.dd-handle {
+    line-height: 2;
+    float: left;
+    margin-left: 5px;
+    font-size: 22px;
+    color: #4888be;
+}
+ol{margin-left: -160px;}
+ol li{text-align: right;}
+.dd-handle{margin-bottom: 2px;}
+
+/* popap-- */
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 43%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #929297c2;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 82%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+
+
+/* Asem Edition */
+
+.form-group{
+     direction: rtl;
+}
+.nav-pills {
+    padding-left: 327px;
+    margin-bottom: 6px;
+    list-style: none;
+    float: right;
+}
+.nav-pills li{
+background-color: rgba(46, 46, 46, 0.116);
+border-radius:4px;
+}
+.nav-pills>li>a{color:#c1c1c1;}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #5bc0de;
+}
+     </style>
+     </head>
+
+     <body>
+          <nav class="navbar navbar-inverse navbar-fixed-top">
+
+                    <div class="navbar-header">
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                         </button>
+
+
+
+
+
+                         <div id="id01" class="modal">
+                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">Ã—</span>
+                         <form class="modal-content" action="/action_page.php">
+                         <div class="container">
+                              <h1 style=" color: #000000;
+                              text-align: center;
+                              margin-top: 3px;
+                              margin-bottom: 9px;
+                              font-size: 45px;
+                              font-weight: bold;"
+                         >ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø®Ø±ÙˆØ¬</h1>
+                              <p>Ù‡Ù„ Ø£Ù†Øª Ù…ØªØ£ÙƒØ¯ ØŸ</p>
+
+                              <div class="clearfix">
+                              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Ø¥Ù„ØºØ§Ø¡</button>
+                              <button type="button" onclick="document.getElementById('id01').style.display='none';event.preventDefault(); document.getElementById('logout').submit();" class="deletebtn"  ><a href="{{route('logout')}}"></a> ØªØ£ÙƒÙŠØ¯ </button>
+                              </div>
+                         </div>
+                         </form>
+                         </div>
+                         <a class="navbar-brand"  onclick="document.getElementById('id01').style.display='block'" style="cursor: pointer;">ØªØ³Ø¬ÙŠÙ„ Ø®Ø±ÙˆØ¬ </a>
+                         <form action="{{route('logout')}}" method="post" id="logout" style="display:none;">
+                              @csrf
+                         </form>
+                    </div>
+                    <div class="sidenav collapse  navbar-collapse" id="myNavbar">
+
+
+                         <a class="ancor" href="{{route('categories.index')}}">Ø§Ù„ØªØ­ÙƒÙ… Ø¨Ø§Ù„Ø£Ù‚Ø³Ø§Ù…  </a>
+
+
+                         <a class="ancor user" href="{{route('users.index')}}">Ø§Ù„ØªØ­ÙƒÙ… Ø¨Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ†  </a>
+
+
+                              <ul class="main-menu" style="margin-top:1px;">
+                                   @foreach (App\Models\Category::with('childrenRecursive')->whereNull('parent_id')->get() as $category)
+                                        @if ($category->children->count()>0)
+                                             <li class="contain-submenu"><a href="#">{{$category->name}} </a>
+                                                  @include('category-partial ',['children' => $category->children , 'x'=>1] )
+                                             </li>
+                                        @else
+                                             <li class="active"><a href="{{route('companies.index',$category->id)}}">{{$category->name}}</a></li>
+                                        @endif
+                                   @endforeach
+                              </ul>
+
+
+                         {{-- <hr style="    margin-top: 0px;
+                         margin-bottom: 0px;
+                         border: 0;
+                         border-top: 1px solid #141313;"> --}}
+
+
+
+
+
+
+
+
+
+                         {{-- @foreach (App\Models\Category::with('childrenRecursive')->whereNull('parent_id')->get() as $category)
+                              @if ($category->children->count()>0)
+                                   <button href= "#" class="dropdown-btn btnList2">{{$category->name}}
+                                        <i class="fa fa-plus-circle"></i>
+                                   </button>
+                                   @include('category-partial ',['children' => $category->children])
+
+                              @else
+                                   <a href= "{{route('companies.index',$category->id)}}" class="">{{$category->name}}</a>
+                              @endif
+                         @endforeach
+
+
+                         <h3>ØµÙØ­Ø§Øª</h3>
+                         <hr>
+                         <a href="{{route('categories.index')}}"><i class='fas fa-shield-alt' ></i>Ø§Ù„ØªØ­ÙƒÙ… Ø¨Ø§Ù„Ø£Ù‚Ø³Ø§Ù… Ø§Ù„Ø£Ø³Ø§Ø³ÙŠØ© </a>
+                         <hr>
+                         <a href="{{route('subcategories.index')}}"><i class='fas fa-shield-alt' ></i>Ø§Ù„ØªØ­ÙƒÙ… Ø¨Ø§Ù„Ø£Ù‚Ø³Ø§Ù… Ø§Ù„ÙØ±Ø¹ÙŠØ© </a>
+                         <hr>
+                         <a href="{{route('users.index')}}"><i class='fas fa-shield-alt' ></i>Ø§Ù„ØªØ­ÙƒÙ… Ø¨Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ†  </a>
+                         <hr> --}}
+                    </div>
+
+          </nav>
+
+
+          {{-- content --}}
+
+
+          @yield('content')
+
+          {{-- end content --}}
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+
+                } else {
+                    dropdownContent.style.display = "block";
+
+                }
+            });
+        }
+     //Add Phones
+        document.getElementById('add-email').onclick = function() {
+            var divInput = document.getElementById('InputEmails');
+            var newInput = document.createElement('div');
+            newInput.innerHTML = ' <input type="email" class="form-control" name="email[]" placeholder="Ø£Ø¯Ø®Ù„ Ø§Ù„Ø¥ÙŠÙ…ÙŠÙ„"><br>';
+            divInput.appendChild(newInput);
+        }
+        //Add Numbers
+
+        document.getElementById('add-phone').onclick = function() {
+            var divInput = document.getElementById('InputPhone');
+            var newInput = document.createElement('div');
+            newInput.innerHTML = '<input type="phone" class="form-control" name="phone[]" placeholder="Ø£Ø¯Ø®Ù„ Ø§Ù„Ø±Ù‚Ù…"><br>';
+            divInput.appendChild(newInput);
+        }
+        //Add Links
+
+        document.getElementById('add-link').onclick = function() {
+            var divInput = document.getElementById('InputLinks');
+            var newInput = document.createElement('div');
+            newInput.innerHTML = '<input type="url" class="form-control" name="link[]" placeholder="Ø£Ø¯Ø®Ù„ Ø§Ù„Ø±Ø§Ø¨Ø·"><br>';
+            divInput.appendChild(newInput);
+        }
+ // Get the popap
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+ // Get the popap2
+ var modal2 = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
+    </script>
+
+</body>
+</html>
